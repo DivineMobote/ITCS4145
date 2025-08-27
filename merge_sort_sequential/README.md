@@ -1,12 +1,14 @@
 # Merge Sort – Sequential (C++)
 
-This project implements a sequential merge sort in C++ for ITCS 4145 course. The goal is to sort an array of integers and benchmark the performance on the Centaurus HPC cluster.
+This project implements a sequential merge sort in C++ for ITCS 4145 Parallel Programming course. The goal is to sort an array of integers and benchmark the performance on the Centaurus HPC cluster.
 
 ---
 
 ## Author 
-Divine Mobote
+**Divine Mobote**
 Course: UNC Charlotte - ITCS 4145 Parallel Programming 
+
+---
 
 ## Description
 
@@ -15,15 +17,17 @@ Course: UNC Charlotte - ITCS 4145 Parallel Programming
 - Language: C++
 - Array: Filled with random integers
 - Input: Array size passed as a command-line argument
-- Output: Time taken to sort (in seconds)
+- Output: Time taken to sort
 
 ---
 
-## Files (update later!)
-- mergesort.cpp – Merge sort implementation
+## Files 
+- mergesort.cpp – C++ merge sort implementation
 - Makefile - For compiling the program
+- results.csv - Output of benchmarks 
+- plot_results.py - Python script to create the plot chart
+- merge_sort_plot.png - Saved chart from matplotlib
 - README - This documentation
-
 
 ---
 
@@ -48,11 +52,10 @@ Run the program with desired array size:
 ```
 Example: 
 ```bash
-./mergesort 20000
+./mergesort 10000
 ```
 Output format:
-20000,0.00512
-
+10000,0.00512
 
 ---
 
@@ -60,10 +63,10 @@ Output format:
 
 SSH into Centaurus:
 ```bash
-ssh yourUNCCusername@centaurus.uncc.edu
+ssh yourUNCCusername@hpc-student.uncc.edu
 ```
 
-Step 1: Clone the Git repo or transfer your files
+Step 1: Clone the Git repo  or transfer your files
 ```bash
 git clone https://github.com/DivineMobote/ITCS4145.git
 ```
@@ -83,35 +86,30 @@ sbatch run.slurm
 ---
 
 ## Benchmark Instructions
-- The benchmark tests were run on input sizes of all powers of 10.
-- Each run will print the size and time to output file
-- Each output will be stored into result file as size,time
+- The benchmark tests were run on input sizes in powers of 10.
+- Each run will print the size and execution time.
+- Results will be stored into results.csv in the format: size, time
 
 ---
 
 ## Plotting the Results
-Use Python + matplotlib to generate a log-log chart:
-```python
-import matplotlib.pyplot as plt
-import pandas as pd
+A log-log of input size vs. executiom time was created using Python matplotlib
 
-data = pd.read_csv('results.csv', header=None, names=['size', 'time'])
-
-plt.figure(figsize=(10,6))
-plt.plot(data['size'], data['time'], marker='o')
-plt.xscale('log')
-plt.yscale('log')
-plt.xlabel('Array Size (log scale)')
-plt.ylabel('Time (seconds, log scale)')
-plt.title('Merge Sort Sequential Benchmark')
-plt.grid(True)
-plt.savefig('plot.png')
-plt.show()
+```bash
+python3 plot_results.py
 ```
+
+This creates and saves the plot as merge_sort_plot.png
 
 ---
 
 ## Performance Reflection
+
+The log-log plot shows that the execution time grows with the size of the input array. 
+
+The shape of the graph reflect: 
+- Increase as the size scales
+- This makes sense and aligns with the time complexity of merge sort.
 
 
 

@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
 
     duration<double> elapsed = end - start;
 
-    // Output format: size,time
+    
     cout << n << "," << elapsed.count() << endl;
 
     return 0;
