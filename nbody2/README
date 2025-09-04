@@ -1,0 +1,125 @@
+N-BODY SIMULATION – ITCS 4145
+
+Author: Divine Mobote  
+Semester: Fall 2025  
+Course: Parallel Programming (ITCS 4145)
+
+---
+
+DESCRIPTION:
+
+This project performs a sequential N-body simulation in C++ to shows the gravitational interactions between particles. The simulation supports both randomly generated systems and predefined configurations like the Sun–Earth–Moon system.
+
+The program outputs the simulation state (positions, velocities, forces) at to a tab-separated `.tsv` file, which can be visualized using a provided Python script.
+
+---
+
+HOW TO COMPILE:
+
+Run the following command in the project directory:
+
+    make
+
+This compiles `nbody.cpp` into an executable named `nbody`.
+
+---
+
+HOW TO RUN (EXAMPLES):
+
+1. Sun–Earth–Moon System:
+    ./nbody sun-earth-moon 200 5000 50 --out sem.tsv
+
+2. From solar snapshot:
+    ./nbody solar.tsv 200 2000 20 --out solar_out.tsv
+
+3. Random 100 particles:
+    ./nbody 100 1 10000 100 --out rand100.tsv
+
+Each of these outputs a `.tsv` file containing the simulation data.
+
+---
+
+HOW TO VISUALIZE:
+
+To create a PDF visualization of the simulation:
+
+    python3 plot.py <input.tsv> <output.pdf> <arrow_scale>
+
+Examples:
+
+    python3 plot.py sem.tsv sem.pdf 10000000
+    python3 plot.py solar_out.tsv solar_out.pdf 10000
+
+NOTE: You need to have matplotlib installed:
+
+    pip install matplotlib
+
+---
+
+RUNNING ON CENTAURUS (HPC):
+
+--- Submit Batch Job:
+
+    sbatch nbody_bench.slurm
+
+--- Check Job Status:
+
+    squeue -u $USER
+
+--- View Logs:
+
+    cd logs/
+    ls -lh
+    cat nbody-bench_<jobid>_<taskid>.err   # or .out if used
+
+---
+
+CENTARUS BENCHMARK RUNS:
+
+The following three benchmarks were submitted to Centaurus using a SLURM array job (`nbody_bench.slurm`):
+
+1. Solar system (10 particles, 5,000,000 steps):
+    ./nbody solar.tsv 200 5000000 5000000 --out solar_bench.tsv
+
+2. Random 100 particles:
+    ./nbody 100 1 10000 10000 --out rand100_bench.tsv
+
+3. Random 1000 particles:
+    ./nbody 1000 1 10000 10000 --out rand1000_bench.tsv
+
+Results are located in:
+    outputs/centaurus/
+
+Benchmark timings (from /usr/bin/time -v):
+
+- solar_bench.tsv  
+    Elapsed time: [fill in]  
+    Max memory: [fill in]
+
+- rand100_bench.tsv  
+    Elapsed time: [fill in]  
+    Max memory: [fill in]
+
+- rand1000_bench.tsv  
+    Elapsed time: [fill in]  
+    Max memory: [fill in]
+
+---
+
+FILES INCLUDED:
+
+- nbody.cpp
+- Makefile
+- plot.py
+- solar.tsv (input snapshot)
+- nbody_bench.slurm (Slurm script used on Centaurus)
+- outputs/
+    - local/
+        - sem.tsv, solar_out.tsv, rand100.tsv
+    - centaurus/
+        - solar_bench.tsv, rand100_bench.tsv, rand1000_bench.tsv
+        - smoke.tsv
+        - .pdf plots (optional)
+        - nbody-bench_*.err (timing logs)
+
+---
