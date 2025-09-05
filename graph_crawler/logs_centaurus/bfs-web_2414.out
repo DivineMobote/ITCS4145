@@ -1,0 +1,70 @@
+make: Nothing to be done for 'all'.
+Start: "Tom Hanks"  depth: 1  reached: 40  time: 172.567 ms
+node	dist
+Tom Hanks	0
+A Beautiful Day in the Neighborhood	1
+A Hologram for the King	1
+A Man Called Otto	1
+Angels & Demons	1
+Asteroid City	1
+Borat Subsequent Moviefilm	1
+Bridge of Spies	1
+California Typewriter	1
+Captain Phillips	1
+Cast Away	1
+Catch Me If You Can	1
+Charlie Wilson's War	1
+Cloud Atlas	1
+Concert for George	1
+Defying the Nazis: The Sharps' War	1
+Elvis	1
+Elvis Has Left the Building	1
+Extremely Loud and Incredibly Close	1
+Finch	1
+... (20 more)
+Start: "Tom Hanks"  depth: 2  reached: 888  time: 4074.89 ms
+node	dist
+Tom Hanks	0
+A Beautiful Day in the Neighborhood	1
+A Hologram for the King	1
+A Man Called Otto	1
+Angels & Demons	1
+Asteroid City	1
+Borat Subsequent Moviefilm	1
+Bridge of Spies	1
+California Typewriter	1
+Captain Phillips	1
+Cast Away	1
+Catch Me If You Can	1
+Charlie Wilson's War	1
+Cloud Atlas	1
+Concert for George	1
+Defying the Nazis: The Sharps' War	1
+Elvis	1
+Elvis Has Left the Building	1
+Extremely Loud and Incredibly Close	1
+Finch	1
+... (868 more)
+Start: "Tom Hanks"  depth: 3  reached: 5911  time: 77077.9 ms
+node	dist
+Tom Hanks	0
+A Beautiful Day in the Neighborhood	1
+A Hologram for the King	1
+A Man Called Otto	1
+Angels & Demons	1
+Asteroid City	1
+Borat Subsequent Moviefilm	1
+Bridge of Spies	1
+California Typewriter	1
+Captain Phillips	1
+Cast Away	1
+Catch Me If You Can	1
+Charlie Wilson's War	1
+Cloud Atlas	1
+Concert for George	1
+Defying the Nazis: The Sharps' War	1
+Elvis	1
+Elvis Has Left the Building	1
+Extremely Loud and Incredibly Close	1
+Finch	1
+... (5891 more)
