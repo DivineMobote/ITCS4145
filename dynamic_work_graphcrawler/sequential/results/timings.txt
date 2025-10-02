@@ -1,0 +1,16 @@
+Start="Tom Hanks", Depth=4
+-----------------------------------
+Parallel Runs
+threads=1 elapsed 8:31.83
+threads=2 elapsed 4:17.73
+threads=4 elapsed 2:10.38
+threads=8 elapsed 1:05.08
+
+Sequential Run
+seq elapsed 8:31.63
+
+Visited Counts
+Visited: 29790 nodes
+Visited: 29790 nodes
+Visited: 29786 nodes
+Visited: 29790 nodes
